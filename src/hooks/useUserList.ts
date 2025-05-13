@@ -32,7 +32,7 @@ const useUserList = () => {
   };
 
   React.useEffect(() => {
-    if (phone) {
+    if (phone.length == 4) {
       handleSearch();
     } else {
       fetchUsers();
