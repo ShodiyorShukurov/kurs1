@@ -30,6 +30,7 @@ const useAdmin = () => {
   };
 
   const handleDeleteModal = async (id: string | null) => {
+    if (!id) return;
     const data = {
       admin_id: id,
     };

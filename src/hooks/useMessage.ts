@@ -23,6 +23,7 @@ const useMessage = () => {
   };
 
   const fetchMessages = async () => {
+
     try {
       const res = await api.get(`/messages/list?limit=10&page=${currentPage}`);
       setMessagesData(res.data);
@@ -32,6 +33,7 @@ const useMessage = () => {
   };
 
   const handleDeleteModal = async (id: string | null) => {
+    if (!id) return
     try {
       const res = await api.delete(`/message/delete/${id}`);
       if (res.data.status === 200) {
