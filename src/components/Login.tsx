@@ -24,7 +24,7 @@ const Login: React.FC = () => {
         if (res.data.data.role === 'admin') {
           window.location.href = '/users';
         } else if (res.data.data.role === 'superadmin') {
-          window.location.href = '/admin';
+          window.location.href = '/admin-add';
         }
         localStorage.setItem('role', res.data.data.role);
         setLoading(false);
