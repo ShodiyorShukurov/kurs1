@@ -56,22 +56,36 @@ const UsersPage = () => {
             Qidirish
           </Button>
         </div>
-        <Card
-          style={{
-            background: '#f0f2f5',
-            borderRadius: '8px',
-            padding: '8px 16px',
-          }}
-          bodyStyle={{ padding: 0 }}
-        >
-          <Text strong>Total users: </Text>
-          <Text type="success">{users?.count}</Text>
-        </Card>
+
+        <div className='flex gap-2'>
+          <Card
+            style={{
+              background: '#f0f2f5',
+              borderRadius: '8px',
+              padding: '8px 16px',
+            }}
+            bodyStyle={{ padding: 0 }}
+          >
+            <Text strong>Total register users: </Text>
+            <Text type="success">{users?.register_user_count}</Text>
+          </Card>
+          <Card
+            style={{
+              background: '#f0f2f5',
+              borderRadius: '8px',
+              padding: '8px 16px',
+            }}
+            bodyStyle={{ padding: 0 }}
+          >
+            <Text strong>Total users: </Text>
+            <Text type="success">{users?.user_count}</Text>
+          </Card>
+        </div>
       </div>
-      
+
       <UsersData
         users={users?.data || []}
-        count={users?.count || 0}
+        count={users?.user_count || 0}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
       />

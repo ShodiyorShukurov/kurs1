@@ -58,7 +58,7 @@ const UsersData = ({ users, count, setCurrentPage, currentPage }: UsersDataProps
           dataSource={users || []}
           rowKey="id"
           pagination={{
-            pageSize: 10,
+            pageSize: 20,
             total: count,
             onChange: (page) => {
               setCurrentPage(page);

@@ -5,7 +5,8 @@ import type { IUser } from '../types/interface';
 const useUserList = () => {
   interface IUserListResponse {
     data: IUser[];
-    count: number;
+    user_count: number;
+    register_user_count: number;
   }
   const [users, setUsers] = React.useState<IUserListResponse | null>(null);
   const [currentPage, setCurrentPage] = React.useState(1);
@@ -13,7 +14,7 @@ const useUserList = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await api.get(`/users/list?limit=10&page=${currentPage}`);
+      const res = await api.get(`/users/list?limit=20&page=${currentPage}`);
       setUsers(res.data);
     } catch (error) {
       console.error('Error fetching users:', error);
